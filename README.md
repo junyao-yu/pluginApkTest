@@ -1,0 +1,2 @@
+# pluginApkTest
+根据DroidPlugin仿写的简单实现启动Activity和使用资源
