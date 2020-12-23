@@ -22,9 +22,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        HookUtil.hookAMS();
+        HookUtil.hookHandler();
+
         setContentView(R.layout.activity_main);
 
         printClassLoader();
+
 
     }
 
@@ -56,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void button2(View view) {
-        HookUtil.hookAMS();
-        HookUtil.hookHandler();
         Intent intent = new Intent();
         intent.setComponent(new ComponentName("com.xinrenlei.test", "com.xinrenlei.test.MainActivity"));
         startActivity(intent);
